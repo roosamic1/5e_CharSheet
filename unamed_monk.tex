@@ -1,0 +1,235 @@
+\documentclass[10pt,twoside,twocolumn,openany]{book}
+\usepackage{lipsum}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{dnd}
+
+\lstset{%
+	basicstyle=\ttfamily,
+	language=[LaTeX]{TeX},
+}
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{
+	\put(0,0){
+		\parbox[b][\paperheight]{\paperwidth}{
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{img/paper.jpg}
+			\vfill
+		}}}
+		
+		\author{Character: unnamed monk\\ \small Player: Mike Roosa}
+		\title{\Huge Feature Book}
+\begin{document}
+\AddToShipoutPicture*{\BackgroundPic}
+\maketitle	
+\tableofcontents
+
+\chapter{Game Statistics}
+\begin{monsterbox}{Unnamed Monk}
+
+		\textit{Medium Elf (wood), neutral good}
+
+	\dndline%
+	\basics[%
+	armorclass =18 ,
+	hitpoints  = 11,
+	speed      = 35 ft
+	]
+	\dndline%
+	\stats[
+	STR = \stat{15},
+	DEX = \stat{19},
+	CON = \stat{16},
+	INT = \stat{7},
+	WIS = \stat{18},
+	CHA = \stat{5}
+	]
+	\dndline%
+	\details[%
+	% If you want to use commas in these sections, enclose the
+	% description in braces.
+	% I'm so sorry.
+	senses = {Darkvision 60 ft., passive Perception 16},
+	languages = {Common, Elvish, Giant},
+	challenge = 1 (0 XP),
+	]
+	\dndline%
+	\begin{monsteraction}[\hyperlink{FA}{Fey Ancestry}]
+		On charm or sleep magic
+	\end{monsteraction}
+	\begin{monsteraction}[\hyperlink{trance}{Trance}]
+		Replaces Sleep for long rest (4hrs)
+	\end{monsteraction}
+	\begin{monsteraction}[\hyperlink{mask}{Mask of the Wild}]
+		Can hide in a little nature
+	\end{monsteraction}
+	\begin{monsteraction}[\hyperlink{wanderer}{Wanderer}]
+		Map memory and food gathering
+	\end{monsteraction}
+	
+	\monstersection{Actions}
+	\begin{monsteraction}[\hyperlink{ma}{Martial Arts}]
+		May make an unarmed strike as a bonus action following a Monk weapon attack
+	\end{monsteraction}
+	\begin{monsteraction}[Monk Weapon]
+		Melee Weapon Attack, +6  to hit\\ Hit: (weapon dice)+4 type damage
+	\end{monsteraction}
+	
+	\begin{monsteraction}[Unarmed Strike]
+		Melee Attack, +6 to hit \\
+		Hit: \dice{1d4+4} bludgeoning damage
+	\end{monsteraction}
+\end{monsterbox}
+	
+	\subsection{Available Weapons}
+		\begin{dndtable}
+			\textbf{Weapon} &\textbf{Damage}\\
+			Staff			&1d6(1d8) bludgeoning \\
+			Shortsword		&1d6 piercing\\
+			Darts			&1d4 piercing; 20/60 feet \\
+			Short Bow		&1d6 piercing; 80/320 feet			
+			
+		\end{dndtable}
+	
+	\subsection{Proficiencies}
+	\begin{itemize}
+		\item Weapons: Simple weapons, Shortswords, Longswords, Longbows
+		\item Tools: Alchemist Supplies
+		\item Instruments: Pan Flute
+	\end{itemize}
+
+
+\section{Skill Checks}
+
+	\subsection{Strength}
+	\begin{dndtable}
+		\textbf{Saving Throws} & +4\\
+		Athletics              & +4
+	\end{dndtable}
+\vspace{-1cm}	
+	\subsection{Dexterity}
+	\begin{dndtable}
+		\textbf{Saving Throws} & +6\\
+		\textbf{Acrobatics}    & +6\\
+		Slight of Hand         & +4\\
+		Stealth                & +4\\
+	\end{dndtable}
+\vspace{-1cm}	
+	\subsection{Constitution}
+	\begin{dndtable}
+		Saving Throws          & +3\\
+	\end{dndtable}
+\vspace{-1cm}	
+	\subsection{Intelligence}
+	\begin{dndtable}
+		Saving Throws          & -2\\
+		Arcana                 & -2\\
+		History                & -2\\
+		Investigation          & -2\\
+		Nature                 & -2\\
+		Religion               & -2 
+	\end{dndtable}
+\vspace{-1cm}	
+	\subsection{Wisdom}
+	\begin{dndtable}
+		Saving Throws          & +4\\
+		Animal Handling        & +4\\
+		\textbf{Insight}       & +6\\
+		Medicine               & +4\\
+		\textbf{Perception}    & +6\\
+		\textbf{Survival}      & +6\\
+	\end{dndtable}
+\vspace{-1cm}	
+	\subsection{Charisma}
+	\begin{dndtable}
+		Saving Throws          & -3\\
+		Deception              & -3\\
+		Intimidation           & -3\\
+		Performance            & -3\\
+		Persuasion             & -3\\ 
+	\end{dndtable}
+	
+	
+\chapter{Class Features}
+\section{Monk}
+	\subsection{Proficiencies}
+		\begin{itemize}
+			\item Weapons: Simple weapons, Shortswords
+			\item Tools: Alchemists Supplies  
+			\item Saving Throws: Str., Dex. 
+			\item Skills: Acrobatics (Dex), Insight (Wis)
+		\end{itemize}
+	\subsection{Unarmored Defense}
+		While you are wearing no armor and not wielding a shield:
+		\begin{quotebox}
+			AC = Dex mod. + Wis mod. = 18
+		\end{quotebox} 
+	
+	\subsection{Martial Arts}
+		\begin{quotebox}
+			\hypertarget{ma}{Martial Arts} Die (Lv 1): 1d4
+		\end{quotebox}
+		\begin{commentbox}{Monk weapons}
+			 Shortswords and any simple melee weapons that don't have the two-handed or heavy property.
+		\end{commentbox}
+		
+		While you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:
+
+		\begin{itemize}
+			\item You can use Dex. instead of Str. for the attack and damage rolls of your unarmed strikes and monk weapons.
+			
+			\item You can roll a martial arts die in place of the normal damage of your unarmed strike or monk weapon.
+			
+			\item When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action
+		\end{itemize}
+		
+%\section{Monastic Tradition}
+
+	
+
+
+%RACIAL_ABILITIES_____________________________________________
+\chapter{Other Features}
+\section{Racial Features}
+\begin{commentbox}{}
+	Race: Elf (Wood) 
+\end{commentbox}
+	\subsection{Dark Vision}
+		You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.
+	\subsection{Fey Ancestry} 
+		\hypertarget{FA}{You have advantage on saving throws against being charmed, and magic can't put you to sleep.}
+	\subsection{Trance}
+		\hypertarget{trance}{Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.}
+	\subsection{Mask of the Wild}
+		\hypertarget{mask}{You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.}
+	\subsection{Special Proficiencies}
+	\begin{itemize}
+		\item Perception (Wis)
+		\item Languages: Common, Elvish
+		\item Walking Speed -> 35 feet
+		\item L./S. Swords \& Bows
+	\end{itemize}
+		
+\vspace{3cm}
+\section{Background Features}
+\begin{commentbox}{}
+	Background: Outlander 
+\end{commentbox}
+	\subsection{Wanderer}
+		\hypertarget{wanderer}{You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth.}
+	\subsection{Special Proficiencies}
+		\begin{itemize}
+			\item Athletics (Str)
+			\item Survival (Wis)
+			\item Pan Flute
+			\item Language: Gaint
+		\end{itemize}	
+
+		
+		
+
+\end{document}
